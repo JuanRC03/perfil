@@ -1,0 +1,43 @@
+<section class="skills section">
+    <h2 class="section__title">Habilidades</h2>
+    <span class="section__subtitle">Mi nivel en tecnologias</span>
+    <div class="skills__container containerPersonal grid">
+
+        
+
+
+        <!-- primera habilidad -->
+        <div *ngFor="let skillCategory of dataSource.data">
+            <div  class="skills__header">
+                <h1 class="skills__titles">{{ skillCategory.name }}</h1>
+            </div>
+
+            <div class="skills__list grid" *ngFor="let skill of skillCategory.children">
+                <div class="skills__data">
+                    <div class="skills__titles">
+                        <h3 class="skills__name">{{ skill.skill }}</h3>
+                        <span class="skills__number">{{ skill.porcent }}</span>
+                    </div>
+                    <div class="skills__bar">
+                        <span *ngIf="skill.porcent=='100%'" class="skills__percentage skills__100">
+                        </span>
+                        <span *ngIf="skill.porcent=='90%'" class="skills__percentage skills__90">
+                        </span>
+                        <span *ngIf="skill.porcent=='80%'" class="skills__percentage skills__80">
+                        </span>
+                        <span *ngIf="skill.porcent=='70%'" class="skills__percentage skills__70">
+                        </span>
+                        <span *ngIf="skill.porcent=='60%'" class="skills__percentage skills__60">
+                        </span>
+                        <span *ngIf="skill.porcent=='50%'" class="skills__percentage skills__50">
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>

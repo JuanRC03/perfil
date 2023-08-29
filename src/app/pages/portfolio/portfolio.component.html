@@ -1,0 +1,35 @@
+<br>
+<section class="portfolio">
+    <h2 class="section__title">Portafolio</h2>
+    <span class="section__subtitle__personalizado">Trabajos mas recientes</span>
+
+    <div class="portfolio__container containerPersonal swiper-container" >
+
+
+        <div class="swiper-wrapper" >
+
+            <div class="  swiper-slide" *ngFor="let dataProyecto of dataSourceProyectos">
+                <div class="portfolio__content grid" >
+                    <img src="{{dataProyecto.url}}" alt="" class="portfolio__img">
+                    <div class="portfolio__data">
+                        <h3 class="portfolio__title">{{dataProyecto.nombre}}</h3>
+                        <p class="portfolio__description"> {{dataProyecto.descripcion}}</p>
+                        <a [href]="dataProyecto.urlProyecto" target="_blank" class="button button--flex button--small portfolio__button">
+                            Ver
+                            <i class="fas fa-arrow-right button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="swiper-button-prev"><i class="fas fa-angle-left swiper-portfolio-icon"></i></div>
+        <div class="swiper-button-next"><i class="fas fa-angle-right swiper-portfolio-icon"></i></div>
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+
+</section>
+<br><br>
