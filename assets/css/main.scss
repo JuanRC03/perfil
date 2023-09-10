@@ -174,6 +174,10 @@ img {
   z-index: var(--z-fixed);
   background-color: var(--body-color);
 }
+
+.backgraud__open__dialog{
+  background-color: var(--body-color);
+}
 /*==================== NAV ====================*/
 .nav {
   max-width: 90vw;
@@ -573,6 +577,11 @@ img {
   font-weight: var(--font-medium);
   cursor: pointer;
 }
+
+.color__texto__open__dialog {
+  color: var(--first-color);
+}
+
 .qualification__button:hover {
   color: var(--first-color);
 }
@@ -1011,7 +1020,7 @@ img {
 
 @media screen and (min-width: 568px) {
   .home__content {
-    grid-template-columns: max-content 1fr 1fr;
+    grid-template-columns: 0.5fr 3fr;
   }
   .home__data {
     grid-column: initial;
@@ -1150,6 +1159,8 @@ img {
     width: 320px;
   }
 
+  
+
   .portfolio__content {
     align-items: center;
   }
@@ -1227,4 +1238,51 @@ img {
 
 .animate-colors-transition * {
   transition: color 0.5s, background 0.5s, fill 0.2s;
+}
+
+
+.portfolio__img {
+  width: 390px;
+  border-radius: 0.5rem;
+  justify-self: center;
+  transition: filter 0.3s;
+}
+
+.portfolio__img.blurred {
+  filter: blur(5px); /* Aplica un efecto de desenfoque cuando el botón está activo */
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.portfolio__button_img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--first-color);;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.image-container:hover .portfolio__button_img {
+  opacity: 1; /* Muestra el botón al pasar el mouse sobre la imagen */
+}
+
+/*Imagenes del open dialog*/
+.imagen-container-open-dialog {
+  text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.imagen-container-open-dialog img {
+  
+  display: block; /* Asegura que cada imagen tenga su propio bloque */
+  margin: 0 auto; /* Centra la imagen horizontalmente dentro del div */
 }
