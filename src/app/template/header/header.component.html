@@ -1,6 +1,6 @@
 <header class="header">
     <nav class="nav containerPersonal">
-        <a (click)="changeEstadoNav('Inicio')" class="nav__logo">Juan Carlos Maigua</a>
+        <a (click)="changeEstadoNav('Inicio')" class="nav__logo">{{nombrePagina}}</a>
 
         <div class="nav__menu" [ngClass]="showMenu ? 'show-menu ':'hide-menu'">
             <ul class="nav__list grid">

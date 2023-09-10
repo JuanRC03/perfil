@@ -1,7 +1,12 @@
+
+
 <br>
+
+
+
 <section class="portfolio">
     <h2 class="section__title">Portafolio</h2>
-    <span class="section__subtitle__personalizado">Trabajos mas recientes</span>
+    <span class="section__subtitle__personalizado">Trabajos destacados</span>
 
     <div class="portfolio__container containerPersonal swiper-container" >
 
@@ -9,17 +14,28 @@
         <div class="swiper-wrapper" >
 
             <div class="  swiper-slide" *ngFor="let dataProyecto of dataSourceProyectos">
-                <div class="portfolio__content grid" >
-                    <img src="{{dataProyecto.url}}" alt="" class="portfolio__img">
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">{{dataProyecto.nombre}}</h3>
-                        <p class="portfolio__description"> {{dataProyecto.descripcion}}</p>
-                        <a [href]="dataProyecto.urlProyecto" target="_blank" class="button button--flex button--small portfolio__button">
-                            Ver
-                            <i class="fas fa-arrow-right button__icon"></i>
-                        </a>
+                <div class="portfolio__content grid">
+                    <div style="align-items: center;">
+                      <div class="image-container" (mouseenter)="showButton = true" (mouseleave)="showButton = false">
+                        <img src="{{ dataProyecto.url }}" alt="" class="portfolio__img" [class.blurred]="showButton">
+                        <button class="portfolio__button_img" *ngIf="showButton" (click)="openDialogImagenes(dataProyecto.nombre, dataProyecto.descripcion,
+                                                                                                            dataProyecto.descUno,dataProyecto.urlImgUno,
+                                                                                                            dataProyecto.descDos,dataProyecto.urlImgDos,
+                                                                                                            dataProyecto.descTres,dataProyecto.urlImgTres,
+                                                                                                            dataProyecto.descCuatro,dataProyecto.urlImgCuatro)" >Ver más imágenes</button>
+                      </div>
                     </div>
-                </div>
+                  
+                    <div class="portfolio__data">
+                      <h3 class="portfolio__title">{{dataProyecto.nombre}}</h3>
+                      <p class="portfolio__description">{{dataProyecto.descripcion}}</p>
+                      <a [href]="dataProyecto.urlProyecto" target="_blank" class="button button--flex button--small portfolio__button">
+                        Ver
+                        <i class="fas fa-arrow-right button__icon"></i>
+                      </a>
+                    </div>
+                  </div>
+                  
 
             </div>
 
@@ -32,4 +48,4 @@
 
 
 </section>
-<br><br>
+<br><br><br><br>

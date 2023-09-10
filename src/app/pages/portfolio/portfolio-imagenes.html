@@ -1,0 +1,12 @@
+
+<h2 class="color__texto__open__dialog" style="margin: 0;" mat-dialog-title>{{datos.nombreProyecto}}</h2>
+<p>{{datos.descripcion}}</p>
+<br>
+<mat-dialog-content class="mat-typography">
+    
+    <div *ngFor="let imagen of modelo.urlsImagenes" class="imagen-container-open-dialog">
+      <br>
+        <p>{{imagen.desc}}</p>
+        <img [src]="imagen.url" alt="Imagen" class="imagen">
+      </div>
+</mat-dialog-content>

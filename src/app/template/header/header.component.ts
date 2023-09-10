@@ -15,16 +15,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public estadoTheme: string = 'inicial';
   public seleccionado: string = 'Inicio';
 
+  nombrePagina='<Juan Carlos Maigua>'
   public itemsMenu = [
     {
       nombre: 'Inicio',
       icono: 'iconsminds-shop-4',
       ruta: 'inicio',
-    },
-    {
-      nombre: 'Acerca',
-      icono: 'iconsminds-administrator',
-      ruta: 'app/portafolio/acerca',
     },
     {
       nombre: 'Habilidades',
